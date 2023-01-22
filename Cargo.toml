@@ -1,7 +1,17 @@
 [package]
 name = "learn-rust-exercises-chapter-8"
 version = "0.1.0"
+authors = ["epilif3sotnas"]
 edition = "2021"
+description = "Learn Rust with Rust book - exercises from chapter 8."
+readme = "README.md"
+repository = "https://github.com/epilif3sotnas/learn-rust-exercises-chapter-8"
+license = "MIT"
+license-file = "LICENSE"
+keywords = ["learning", "Rust", "Book"]
+publish = false
 
 
-[dependencies]
+[[bin]]
+name = "learn-rust-exercises-chapter-8"
+path = "src/main.rs"
