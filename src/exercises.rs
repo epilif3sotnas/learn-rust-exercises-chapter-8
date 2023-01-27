@@ -1,3 +1,3 @@
-pub mod exercise_1;
-// pub mod exercise_2;
-// pub mod exercise_3;
+pub mod exercise1;
+pub mod exercise2;
+// pub mod exercise3;
