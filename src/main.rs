@@ -1,7 +1,7 @@
 // internal
 mod exercises;
 
-use crate::exercises::exercise_1::exercise_1_result;
+use crate::exercises::exercise1::exercise_1;
 
 
 fn main() {
