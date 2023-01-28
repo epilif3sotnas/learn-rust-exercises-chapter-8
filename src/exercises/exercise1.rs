@@ -16,7 +16,7 @@ fn median (list: &Vec<i32>) {
     }
 
     let mut list_cloned = list.clone();
-    let mut median: f32 = 0.0;
+    let median: f32;
 
     list_cloned.sort();
 
@@ -44,9 +44,9 @@ fn mode (list: &Vec<i32>) {
         return;
     }
 
-    let mut mode: i32 = 0;
+    let mode: i32;
 
-    let mut list_cloned = list.clone();
+    let list_cloned = list.clone();
     
     let mut hash_table = HashMap::new();
     
