@@ -9,11 +9,12 @@ pub fn exercise_2 (text: &str) {
 }
 
 fn convert_word (word: &str) -> String {
-    let letters: Vec<char> = word.chars().collect();
+    let characters: Vec<char> = word.chars().collect();
 
     // ### TODO - Check what rule to apply ###
 }
 
+// When started with one consonant
 fn convert_with_rule_1 (characters: Vec<char>) -> String {
     let mut word_compiled: Vec<char> = characters[1..].to_vec();
 
@@ -24,14 +25,25 @@ fn convert_with_rule_1 (characters: Vec<char>) -> String {
     return word_compiled.iter().collect();
 }
 
+// When started with two consonants
 fn convert_with_rule_2 (characters: Vec<char>) -> String {
-    
+    let mut word_compiled: Vec<char> = characters[2..].to_vec();
+
+    word_compiled.push(characters[0]);
+    word_compiled.push(characters[1]);
+    word_compiled.push('a' as char);
+    word_compiled.push('y' as char);
+
+    return word_compiled.iter().collect();
 }
 
+// When started with vowel
 fn convert_with_rule_3 (characters: Vec<char>) -> String {
-    
-}
+    let mut word_compiled: Vec<char> = characters[0..].to_vec();
 
-fn convert_with_rule_4 (characters: Vec<char>) -> String {
-    
+    word_compiled.push('w' as char);
+    word_compiled.push('a' as char);
+    word_compiled.push('y' as char);
+
+    return word_compiled.iter().collect();
 }
