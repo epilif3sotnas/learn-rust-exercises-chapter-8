@@ -1,17 +1,35 @@
+const vowels: &str = "aeiou";
+const consonants: &str = "bcdfghjklmnpqrstvwxyz";
+
+
 pub fn exercise_2 (text: &str) {
+    println!("############## Exercise 2 ##############");
     let words: Vec<&str> = text.split(" ").collect();
 
     let mut text_converted: String = String::new();
 
     for word in words {
         let word_to_concatenate: String = convert_word(word);
+
+        text_converted.push_str(&word_to_concatenate);
+        text_converted.push_str(" ");
     }
+
+    println!("Text converted (Pig Latin): {:?}", text_converted);
+    println!("########################################");
 }
 
 fn convert_word (word: &str) -> String {
     let characters: Vec<char> = word.chars().collect();
 
-    // ### TODO - Check what rule to apply ###
+    if consonants.contains(characters[0])
+            && vowels.contains((characters[1])) {
+        return convert_with_rule_1(characters);
+    } else if consonants.contains(characters[0]) {
+        return convert_with_rule_2(characters);
+    } else {
+        return convert_with_rule_3(characters);
+    }
 }
 
 // When started with one consonant
