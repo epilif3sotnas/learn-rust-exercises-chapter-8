@@ -12,5 +12,5 @@ fn main() {
     println!("");
 
     // exercise 2
-    exercise_2("The pig is an omnivorous , domesticated , even-toed , hoofed mammal . It is variously considered a subspecies of Sus scrofa or a distinct species.");
+    exercise_2("The pig is an omnivorous , domesticated , even-toed , hoofed mammal . It is variously considered a subspecies of Sus scrofa or a distinct species .");
 }
