@@ -5,7 +5,10 @@ use std::collections::HashMap;
 
 pub fn exercise_3 () {
     let departments: HashMap<String, Vec<String>> = add_people();
-    println!("{:?}", departments);
+    
+    println!("############## Exercise 3 ##############");
+    retrieve_persons_by_department(departments);
+    println!("########################################");
 }
 
 fn add_people () -> HashMap<String, Vec<String>> {
@@ -26,6 +29,7 @@ fn add_people () -> HashMap<String, Vec<String>> {
                     .or_insert(Vec::new());
 
         department_people.push(person_name.trim().to_string());
+        department_people.sort();
 
         
         println!("Do you want to terminate the addiction? (y/n)");
@@ -35,6 +39,15 @@ fn add_people () -> HashMap<String, Vec<String>> {
 
         if !option.trim().is_empty() && option.trim() == "y" {
             return departments;
+        }
+    }
+}
+
+fn retrieve_persons_by_department (data: HashMap<String, Vec<String>>) {
+    for element in data.iter() {
+        println!("############## {:?} ##############", element.0);
+        for person in element.1.iter() {
+            println!("- {:?}", person);
         }
     }
 }
