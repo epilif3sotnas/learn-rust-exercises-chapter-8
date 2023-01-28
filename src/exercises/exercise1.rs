@@ -2,10 +2,10 @@
 use std::collections::HashMap;
 
 
-pub fn exercise_1 (list: &Vec<i32>) {
+pub fn exercise_1 (list: Vec<i32>) {
     println!("############## Exercise 1 ##############");
-    median(list);
-    mode(list);
+    median(&list);
+    mode(&list);
     println!("########################################");
 }
 

@@ -6,8 +6,7 @@ edition = "2021"
 description = "Learn Rust with Rust book - exercises from chapter 8."
 readme = "README.md"
 repository = "https://github.com/epilif3sotnas/learn-rust-exercises-chapter-8"
-license = "MIT"
-license-file = "LICENSE"
+license = "Apache-2.0"
 keywords = ["learning", "Rust", "Book"]
 publish = false
 
