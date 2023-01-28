@@ -1,5 +1,5 @@
-const vowels: &str = "aeiou";
-const consonants: &str = "bcdfghjklmnpqrstvwxyz";
+const VOWELS: &str = "aeiou";
+const CONSONANTS: &str = "bcdfghjklmnpqrstvwxyz";
 
 
 pub fn exercise_2 (text: &str) {
@@ -22,13 +22,15 @@ pub fn exercise_2 (text: &str) {
 fn convert_word (word: &str) -> String {
     let characters: Vec<char> = word.chars().collect();
 
-    if consonants.contains(characters[0])
-            && vowels.contains((characters[1])) {
+    if CONSONANTS.contains(characters[0])
+            && VOWELS.contains(characters[1]) {
         return convert_with_rule_1(characters);
-    } else if consonants.contains(characters[0]) {
+    } else if CONSONANTS.contains(characters[0]) {
         return convert_with_rule_2(characters);
-    } else {
+    } else if VOWELS.contains(characters[0]) {
         return convert_with_rule_3(characters);
+    } else {
+        return characters.iter().collect();
     }
 }
 
