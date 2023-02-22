@@ -1,16 +1,15 @@
 // rust
 use std::collections::HashMap;
 
-
-pub fn exercise_1 (list: Vec<i32>) {
+pub fn exercise_1(list: Vec<i32>) {
     println!("############## Exercise 1 ##############");
     median(&list);
     mode(&list);
     println!("########################################");
 }
 
-fn median (list: &Vec<i32>) {
-    if list.len() == 0 { 
+fn median(list: &Vec<i32>) {
+    if list.len() == 0 {
         println!("List is empty");
         return;
     }
@@ -25,7 +24,7 @@ fn median (list: &Vec<i32>) {
             let n = list.len() / 2;
 
             median = ((list_cloned[n - 1] + list_cloned[n]) / 2) as f32;
-        },
+        }
 
         _ => {
             let n = (list.len() / 2) as f32;
@@ -38,8 +37,8 @@ fn median (list: &Vec<i32>) {
     println!("Median: {}", median);
 }
 
-fn mode (list: &Vec<i32>) {
-    if list.len() == 0 { 
+fn mode(list: &Vec<i32>) {
+    if list.len() == 0 {
         println!("List is empty");
         return;
     }
@@ -47,22 +46,19 @@ fn mode (list: &Vec<i32>) {
     let mode: i32;
 
     let list_cloned = list.clone();
-    
+
     let mut hash_table = HashMap::new();
-    
+
     for element in list_cloned {
-        let count = hash_table.entry(element.to_string())
-                                        .or_insert(0);
+        let count = hash_table.entry(element.to_string()).or_insert(0);
         *count += 1;
     }
 
-    let mode_max = hash_table.iter()
-                                                      .max_by(|a, b| a.1.cmp(&b.1));
+    let mode_max = hash_table.iter().max_by(|a, b| a.1.cmp(&b.1));
 
     match mode_max {
-        Some(mode_max) => mode = mode_max.0.parse::<i32>()
-                                                            .unwrap_or(0),
-        None => mode = 0
+        Some(mode_max) => mode = mode_max.0.parse::<i32>().unwrap_or(0),
+        None => mode = 0,
     }
 
     println!("Mode: {}", mode);

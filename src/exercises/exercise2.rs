@@ -1,8 +1,7 @@
 const VOWELS: &str = "aeiou";
 const CONSONANTS: &str = "bcdfghjklmnpqrstvwxyz";
 
-
-pub fn exercise_2 (text: &str) {
+pub fn exercise_2(text: &str) {
     println!("############## Exercise 2 ##############");
     let words: Vec<&str> = text.split(" ").collect();
 
@@ -19,11 +18,10 @@ pub fn exercise_2 (text: &str) {
     println!("########################################");
 }
 
-fn convert_word (word: &str) -> String {
+fn convert_word(word: &str) -> String {
     let characters: Vec<char> = word.chars().collect();
 
-    if CONSONANTS.contains(characters[0])
-            && VOWELS.contains(characters[1]) {
+    if CONSONANTS.contains(characters[0]) && VOWELS.contains(characters[1]) {
         return convert_with_rule_1(characters);
     } else if CONSONANTS.contains(characters[0]) {
         return convert_with_rule_2(characters);
@@ -35,7 +33,7 @@ fn convert_word (word: &str) -> String {
 }
 
 // When started with one consonant
-fn convert_with_rule_1 (characters: Vec<char>) -> String {
+fn convert_with_rule_1(characters: Vec<char>) -> String {
     let mut word_compiled: Vec<char> = characters[1..].to_vec();
 
     word_compiled.push(characters[0]);
@@ -46,7 +44,7 @@ fn convert_with_rule_1 (characters: Vec<char>) -> String {
 }
 
 // When started with two consonants
-fn convert_with_rule_2 (characters: Vec<char>) -> String {
+fn convert_with_rule_2(characters: Vec<char>) -> String {
     let mut word_compiled: Vec<char> = characters[2..].to_vec();
 
     word_compiled.push(characters[0]);
@@ -58,7 +56,7 @@ fn convert_with_rule_2 (characters: Vec<char>) -> String {
 }
 
 // When started with vowel
-fn convert_with_rule_3 (characters: Vec<char>) -> String {
+fn convert_with_rule_3(characters: Vec<char>) -> String {
     let mut word_compiled: Vec<char> = characters[0..].to_vec();
 
     word_compiled.push('w' as char);
